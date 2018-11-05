@@ -5,6 +5,7 @@ SI 364 Midterm
 Theresa Nguyen
 
 **Description**
+
 My app allows a user to search for restaurants from the YELP API, and then write a review for any restaurant they want! After, they are able to see any reviews about any restaurant thus far. 
 
 **View/Route Functions**
@@ -16,6 +17,7 @@ My app allows a user to search for restaurants from the YELP API, and then write
 1. Search
 2. Restaurants
 3. Reviews
+One restaurant can have many reviews. 
 
 **Forms:**
 1. Search Form
