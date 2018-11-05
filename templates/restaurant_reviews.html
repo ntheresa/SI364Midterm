@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Restaurant Reviews</h3>
+{% for r in all_reviews %}
+  <li>
+  {{r.restaurant_id}} : {{r.review}}
+  </li>
+
+{% endfor %}
+
+{% if not all_reviews %}
+    There are no reviews to show.
+{% endif %}
+
+{% endblock %}

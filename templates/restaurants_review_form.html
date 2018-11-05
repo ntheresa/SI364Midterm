@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.restaurant_name.label() }} {{ form.restaurant_name() }} <br>
+	{{ form.rating.label() }} {{ form.rating() }} <br>
+	{{ form.food_type.label() }} {{ form.food_type() }} <br>
+	{{ form.location.label() }} {{ form.location() }} <br>
+	{{ form.review.label() }} {{ form.review() }} <br>
+	{{ form.submit() }}
+</form>
+
+<ul>
+    <li><a href="{{ url_for('reviews')}}">See all reviews.</a></li>
+</ul>
+
+<div>
+{% for message in get_flashed_messages() %}
+  <strong>  {{ message }} </strong>
+{% endfor %}
+</div>
+
+{% endblock %}

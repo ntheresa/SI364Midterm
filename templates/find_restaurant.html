@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3> Hello! Look for restaurants around you. </h3>
+<form action="/find_restaurant" method="POST">
+  	{{ form.city.label() }} {{ form.city() }} <br>
+  	{{ form.food_type.label() }} {{ form.food_type() }} <br>
+
+  	{{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+<table>
+    <tr>
+        <th>Restaurant Name |</th>
+        <th>Price|</th>
+        <th>Rating|</th>
+        <th> URL |</th>
+    </tr>
+  {% for r in all_restaurants %}
+  <tr>
+    <td> {{r.name}} </td>
+    <td> {{r.price}} </td>
+    <td> {{r.rating}} </td>
+    <td> {{r.url}} </td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% if not all_restaurants %}
+    There are no restaurants to show.
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+  <strong>  {{ message }} </strong>
+{% endfor %}
+</div>
+{% endblock %}

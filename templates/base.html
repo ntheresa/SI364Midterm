@@ -1,12 +1,14 @@
 
 
-{% block content1 %}
+<h2>SI 364: Restaurants Overload </h2>
+<img src="https://media.giphy.com/media/jKaFXbKyZFja0/giphy.gif" alt="Food Critic">
+<ul>
+    <li><a href="{{ url_for('home')}}">Go to the home page.</a></li>
+    <li><a href="{{ url_for('find_restaurant')}}">Find a restaurant.</a></li>
+    <li><a href="{{ url_for('restaurants_review')}}">Review a restaurant.</a></li>
+</ul>
 
-<form action="{{ url_for('home') }}" method="POST">
-    {{ form.name.label() }}{{ form.name() }}<br>
-    {{ form.submit() }}
-    {{ form.hidden_tag() }}
-</form>
-
-
-{% endblock %}
+<div>
+    {% block content %}
+    {% endblock %}
+</div>

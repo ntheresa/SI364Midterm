@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="http://localhost:5000/find_restaurant" method="GET">
+    {{ form.hidden_tag() }}
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.submit() }}
+</form>
+
+
+{% endblock %}
